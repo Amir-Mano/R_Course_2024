@@ -1,0 +1,512 @@
+plot(df$stress,df$satisfaction, ylim= c(0,100))
+abline(lm(df$satisfaction ~ df$stress), col = "red")
+theme_minimal()
+plot(df$stress,df$satisfaction, ylim= c(0,100)) +
+abline(lm(df$satisfaction ~ df$stress), col = "red") +
+theme_minimal()
+plot(df$stress,df$satisfaction, ylim= c(0,100),
+xlab = 'Stress Level', ylab = 'Satisfaction Score') +
+abline(lm(df$satisfaction ~ df$stress), col = "red")
+plot(df$stress,df$satisfaction, ylim= c(0,100),
+xlab = 'Stress Level', ylab = 'Satisfaction Score',
+title = 'with R based') +
+abline(lm(df$satisfaction ~ df$stress), col = "red")
+plot(df$stress,df$satisfaction, ylim= c(0,100),
+xlab = 'Stress Level', ylab = 'Satisfaction Score', title = 'with R based'
+plot(df$stress,df$satisfaction, ylim= c(0,100),
+plot(df$stress,df$satisfaction, ylim= c(0,100),
+xlab = 'Stress Level', ylab = 'Satisfaction Score')
+plot(df$stress,df$satisfaction, ylim= c(0,100),
+xlab = 'Stress Level', ylab = 'Satisfaction Score', title = 's')
+plot(df$stress,df$satisfaction, ylim= c(0,100),
+xlab = 'Stress Level', ylab = 'Satisfaction Score') +
+title = 'with R based' +
+abline(lm(df$satisfaction ~ df$stress), col = "red")
+plot(df$stress,df$satisfaction, ylim= c(0,100),
+xlab = 'Stress Level', ylab = 'Satisfaction Score') +
+title('with R based') +
+abline(lm(df$satisfaction ~ df$stress), col = "red")
+plot1 <- plot(df$stress,df$satisfaction, ylim= c(0,100),
+xlab = 'Stress Level', ylab = 'Satisfaction Score') +
+title('with R based') +
+abline(lm(df$satisfaction ~ df$stress), col = "red")
+# with R based
+plot1 <- plot(df$stress,df$satisfaction, ylim= c(0,100),
+xlab = 'Stress Level', ylab = 'Satisfaction Score') +
+title('with R based') +
+abline(lm(df$satisfaction ~ df$stress), col = "red")
+# with ggplot
+plot2 <- ggplot(data = df, aes(x = stress, y = satisfaction)) +
+geom_point(color = "blue", size = 3) +
+geom_smooth(method = "lm", color = "red") +
+labs(title = "with ggplot2",
+x = " X",
+y = " Y") +
+theme_minimal()
+plot1 + plot2
+ggplot(data = df, aes(x = stress, y = satisfaction)) +
+geom_point(color = "blue", size = 3) +
+geom_smooth(method = "lm", color = "red") +
+labs(title = "with ggplot2",
+x = " X",
+y = " Y") +
+theme_minimal()
+plot1 <- plot(df$stress,df$satisfaction, ylim= c(0,100),
+xlab = 'Stress Level', ylab = 'Satisfaction Score') +
+title('with R based') +
+abline(lm(df$satisfaction ~ df$stress), col = "red")
+# with ggplot
+plot2 <- ggplot(data = df, aes(x = stress, y = satisfaction)) +
+geom_point(color = "blue", size = 3) +
+geom_smooth(method = "lm", color = "red") +
+labs(title = "with ggplot2",
+x = "Stress Level",
+y = "Satisfaction Score") +
+theme_minimal()
+plot1 + plot2
+plot1 <- plot(df$stress,df$satisfaction, ylim= c(0,100),
+xlab = 'Stress Level', ylab = 'Satisfaction Score') +
+title('with R based') +
+abline(lm(df$satisfaction ~ df$stress), col = "red")
+plot1 <- plot(df$stress,df$satisfaction, ylim= c(0,100),
+xlab = 'Stress Level', ylab = 'Satisfaction Score')
+plot1 <- plot(df$stress,df$satisfaction, ylim= c(0,100),
+xlab = 'Stress Level', ylab = 'Satisfaction Score')
+title('with R based')
+abline(lm(df$satisfaction ~ df$stress), col = "red")
+plot(df$stress,df$satisfaction, ylim= c(0,100),
+xlab = 'Stress Level', ylab = 'Satisfaction Score')
+title('with R based')
+abline(lm(df$satisfaction ~ df$stress), col = "red")
+plot1 <- recordPlot()
+# with ggplot
+plot2 <- ggplot(data = df, aes(x = stress, y = satisfaction)) +
+geom_point(color = "blue", size = 3) +
+geom_smooth(method = "lm", color = "red") +
+labs(title = "with ggplot2",
+x = "Stress Level",
+y = "Satisfaction Score") +
+theme_minimal()
+plot1 + plot2
+# with R based
+plot(df$stress,df$satisfaction, ylim= c(0,100),
+xlab = 'Stress Level', ylab = 'Satisfaction Score')
+title('with R based')
+abline(lm(df$satisfaction ~ df$stress), col = "red")
+plot1 <- recordPlot()
+plot1 <- recordPlot()
+plot1
+plot1
+plot2 <- ggplot(data = df, aes(x = stress, y = satisfaction)) +
+geom_point(color = "blue", size = 3) +
+geom_smooth(method = "lm", color = "red") +
+labs(title = "with ggplot2",
+x = "Stress Level",
+y = "Satisfaction Score") +
+theme_minimal()
+plot2
+plot1 + plot2
+plot2 <- ggplot(data = df, aes(x = stress, y = satisfaction)) +
+geom_point(color = "blue", size = 3) +
+geom_smooth(method = "lm", color = "red") +
+labs(title = "with ggplot2",
+x = "Stress Level",
+y = "Satisfaction Score") +
+theme_minimal()
+# with ggplot
+plot2 <- ggplot(data = df, aes(x = stress, y = satisfaction)) +
+geom_point(color = "darkblue", size = 3) +
+geom_smooth(method = "lm", color = "darkred") +
+labs(title = "with ggplot2",
+x = "Stress Level",
+y = "Satisfaction Score") +
+theme_minimal()
+ggplot(data = df, aes(x = stress, y = satisfaction)) +
+geom_point(color = "darkblue", size = 3) +
+geom_smooth(method = "lm", color = "darkred") +
+labs(title = "with ggplot2",
+x = "Stress Level",
+y = "Satisfaction Score") +
+theme_minimal()
+ggplot(data = df, aes(x = stress, y = satisfaction)) +
+geom_point(color = "darkblue", shape = 21, size = 3) +
+geom_smooth(method = "lm", color = "red") +
+labs(title = "with ggplot2",
+x = "Stress Level",
+y = "Satisfaction Score") +
+theme_minimal()
+ggplot(data = df, aes(x = stress, y = satisfaction)) +
+geom_point(color = "darkblue", shape = 21, size = 5) +
+geom_smooth(method = "lm", color = "red") +
+labs(title = "with ggplot2",
+x = "Stress Level",
+y = "Satisfaction Score") +
+theme_minimal()
+ggplot(data = df, aes(x = stress, y = satisfaction)) +
+geom_smooth(method = "lm", color = "red") +
+geom_point(color = "darkblue", shape = 21, size = 3) +
+labs(title = "with ggplot2",
+x = "Stress Level",
+y = "Satisfaction Score") +
+theme_minimal()
+ggplot(data = df, aes(x = stress, y = satisfaction)) +
+geom_smooth(method = "lm", color = "darkred") +
+geom_point(color = "blue", shape = 21, size = 3) +
+labs(title = "with ggplot2",
+x = "Stress Level",
+y = "Satisfaction Score") +
+theme_minimal()
+ggplot(data = df, aes(x = stress, y = satisfaction)) +
+geom_smooth(method = "lm", color = "red3") +
+geom_point(color = "skyblue2", shape = 21, size = 3) +
+labs(title = "with ggplot2",
+x = "Stress Level",
+y = "Satisfaction Score") +
+theme_minimal()
+ggplot(data = df, aes(x = stress, y = satisfaction)) +
+geom_smooth(method = "lm", color = "red3") +
+geom_point(color = "skyblue3", shape = 21, size = 3) +
+labs(title = "with ggplot2",
+x = "Stress Level",
+y = "Satisfaction Score") +
+theme_minimal()
+ggplot(data = df, aes(x = stress, y = satisfaction)) +
+geom_smooth(method = "lm", color = "red3") +
+geom_point(color = "skyblue3", shape = 21, size = 4) +
+labs(title = "with ggplot2",
+x = "Stress Level",
+y = "Satisfaction Score") +
+theme_classic()
+ggplot(data = df, aes(x = stress, y = satisfaction)) +
+geom_smooth(method = "lm", color = "red3") +
+geom_point(color = "blue3", shape = 21, size = 4) +
+labs(title = "with ggplot2",
+x = "Stress Level",
+y = "Satisfaction Score") +
+theme_classic()
+plot3 <-ggscatter(data = df, aes(x = stress, y = satisfaction),
+color = "blue", shape = 21, size = 2.5,
+add = "reg.line",
+add.params = list(color = "darkred", fill = "lightgray"),
+conf.int = TRUE,
+cor.coef = TRUE)
+ggscatter(data = df, x = "stress", y = "satisfaction",
+color = "blue", shape = 21, size = 2.5,
+add = "reg.line",
+add.params = list(color = "darkred", fill = "lightgray"),
+conf.int = TRUE,
+cor.coef = TRUE)
+library(ggpubr)
+ggscatter(data = df, aes(x = stress, y = satisfaction),
+color = "blue", shape = 21, size = 2.5,
+add = "reg.line",
+add.params = list(color = "darkred", fill = "lightgray"),
+conf.int = TRUE,
+cor.coef = TRUE)
+ggscatter(data = df, x = "stress", y = "satisfaction",
+color = "blue", shape = 21, size = 2.5,
+add = "reg.line",
+add.params = list(color = "darkred", fill = "lightgray"),
+conf.int = TRUE,
+cor.coef = TRUE)
+ggscatter(data = df, x = "stress", y = "satisfaction",
+color = "blue3", shape = 21, size = 4,
+add = "reg.line",
+add.params = list(color = "red3", fill = "lightgray"),
+conf.int = TRUE,
+cor.coef = TRUE)
+#### creating and saving variables ----
+N = 200
+source("~/.active-rstudio-document", echo=TRUE)
+ggscatter(data = df, x = "stress", y = "satisfaction",
+color = "blue3", shape = 21, size = 4,
+add = "reg.line",
+add.params = list(color = "red3", fill = "lightgray"),
+conf.int = TRUE,
+cor.coef = TRUE)
+load('HW_6_1.RData')
+source("C:/Users/amirm/Dropbox/אוניברסיטת תל אביב/תואר שלישי/סמסטר ג/היכרות עם R/HW_6_1.R", echo=TRUE)
+load('HW_6_1.RData')
+ggscatter(data = df, x = "stress", y = "satisfaction",
+color = "blue3", shape = 21, size = 4,
+add = "reg.line",
+add.params = list(color = "red3", fill = "lightgray"),
+conf.int = TRUE,
+cor.coef = TRUE)
+source("C:/Users/amirm/Dropbox/אוניברסיטת תל אביב/תואר שלישי/סמסטר ג/היכרות עם R/HW_6_1.R", echo=TRUE)
+load('HW_6_1.RData')
+ggscatter(data = df, x = "stress", y = "satisfaction",
+color = "blue3", shape = 21, size = 4,
+add = "reg.line",
+add.params = list(color = "red3", fill = "lightgray"),
+conf.int = TRUE,
+cor.coef = TRUE)
+load('HW_6_1.RData')
+ggscatter(data = df, x = "stress", y = "satisfaction",
+color = "blue3", shape = 21, size = 4,
+add = "reg.line",
+add.params = list(color = "red3", fill = "lightgray"),
+conf.int = TRUE,
+cor.coef = TRUE)
+source("C:/Users/amirm/Dropbox/אוניברסיטת תל אביב/תואר שלישי/סמסטר ג/היכרות עם R/HW_6_1.R", echo=TRUE)
+# R course for beginners
+# Week 6 part 2
+# assignment by Amir Mano, id 205779788
+#### prepare workspace ----
+rm(list = ls()) #or Ctrl + Shift + F10 & Ctrl + L
+load('HW_6_1.RData')
+# import packages
+library(tidyverse)
+library(ggplot2)
+library(patchwork)
+library(ggpubr)
+#### descriptive statistics ----
+cat('Age statistics:\n', summary(df)[c(1,6,4,3) ,2],'\n')
+cat('Female numbers:\n', df$sub_id[df$gender=='F'],'\n')
+cat('Male numbers:\n', df$sub_id[df$gender=='M'],'\n')
+#### plotting ----
+# with R based
+plot(df$stress,df$satisfaction, ylim= c(0,100),
+xlab = 'Stress Level', ylab = 'Satisfaction Score')
+title('with R based')
+abline(lm(df$satisfaction ~ df$stress), col = "red")
+# with ggplot
+plot2 <- ggplot(data = df, aes(x = stress, y = satisfaction)) +
+geom_smooth(method = "lm", color = "red3") +
+geom_point(color = "blue3", shape = 21, size = 4) +
+labs(title = "with ggplot2",
+x = "Stress Level",
+y = "Satisfaction Score") +
+theme_classic()
+ggscatter(data = df, x = "stress", y = "satisfaction",
+color = "blue3", shape = 21, size = 4,
+add = "reg.line",
+add.params = list(color = "red3", fill = "lightgray"),
+conf.int = TRUE,
+cor.coef = TRUE)
+ggscatter(data = df, x = "stress", y = "satisfaction",
+color = "blue3", shape = 21, size = 4,
+add = "reg.line",
+add.params = list(color = "red3", fill = "lightgray"),
+conf.int = TRUE)
+ggscatter(data = df, x = "stress", y = "satisfaction",
+color = "blue3", shape = 21, size = 4,
+add = "reg.line",
+add.params = list(color = "red3", fill = "lightgray")
+)
+ggscatter(data = df, x = "stress", y = "satisfaction",
+color = "blue3", shape = 21, size = 4,
+add = "reg.line",
+add.params = list(color = "red3", fill = "lightgray"),
+conf.int = TRUE)
+ggscatter(data = df, x = "stress", y = "satisfaction",
+color = "blue3", shape = 21, size = 4,
+add = "reg.line",
+add.params = list(color = "red3", fill = "lightgray"),
+conf.int = TRUE) +
+labs(title = "with ggplot2",
+x = "Stress Level",
+y = "Satisfaction Score") +
+theme_classic()
+# with ggplot
+plot2 <- ggplot(data = df, aes(x = stress, y = satisfaction)) +
+geom_smooth(method = "lm", color = "red3") +
+geom_point(color = "blue3", shape = 21, size = 4) +
+labs(title = "with ggplot2",
+x = "Stress Level",
+y = "Satisfaction Score") +
+theme_classic()
+plot3<- ggscatter(data = df, x = "stress", y = "satisfaction",
+color = "blue3", shape = 21, size = 4,
+add = "reg.line",
+add.params = list(color = "red3", fill = "lightgray"),
+conf.int = TRUE) +
+labs(title = "with ggscatter",
+x = "Stress Level",
+y = "Satisfaction Score") +
+theme_classic()
+plot2 + plot3
+plot3<- ggscatter(data = df, x = "stress", y = "satisfaction",
+color = "blue3", shape = 21, size = 4,
+add = "reg.line",
+add.params = list(color = "red3", fill = "lightgray"),
+conf.int = TRUE) +
+labs(title = "with ggscatter",
+x = "Stress Level",
+y = "Satisfaction Score")
+ggscatter(data = df, x = "stress", y = "satisfaction",
+color = "green4", shape = 21, size = 4,
+add = "reg.line",
+add.params = list(color = "red3", fill = "lightgray"),
+conf.int = TRUE) +
+labs(title = "with ggscatter",
+x = "Stress Level",
+y = "Satisfaction Score")
+# R course for beginners
+# Week 6 part 2
+# assignment by Amir Mano, id 205779788
+#### prepare workspace ----
+rm(list = ls()) #or Ctrl + Shift + F10 & Ctrl + L
+load('HW_6_1.RData')
+# import packages
+library(tidyverse)
+library(ggplot2)
+library(patchwork)
+library(ggpubr)
+#### descriptive statistics ----
+cat('Age statistics:\n', summary(df)[c(1,6,4,3) ,2],'\n')
+cat('Female numbers:\n', df$sub_id[df$gender=='F'],'\n')
+cat('Male numbers:\n', df$sub_id[df$gender=='M'],'\n')
+#### plotting ----
+# with R based
+plot(df$stress,df$satisfaction, ylim= c(0,100),
+xlab = 'Stress Level', ylab = 'Satisfaction Score')
+title('with R based')
+abline(lm(df$satisfaction ~ df$stress), col = "red")''
+source("~/.active-rstudio-document", echo=TRUE)
+plot1
+plot2 + plot3
+# R course for beginners
+# Week 6 part 1
+# assignment by Amir Mano, id 205779788
+#### prepare workspace ----
+rm(list = ls()) #or Ctrl + Shift + F10 & Ctrl + L
+# import packages
+library(tidyverse)
+#### creating and saving variables ----
+N = 20
+df <- data.frame(
+sub_id = seq(1,N),
+age = runif(N, 18, 60),
+gender = factor(sample(c('M','F'), N, replace=T)),
+stress = runif(N, 0, 10)
+)
+# adding satisfaction score
+b0 = 100
+b1 = -10
+df <- df |>
+mutate(satisfaction = rnorm(N,b0 + stress*b1),sd = 30)
+df <- df |>
+mutate(satisfaction = if_else(satisfaction > 100, 100, satisfaction),
+satisfaction = if_else(satisfaction < 0, 0, satisfaction))
+plot(df$stress,df$satisfaction, ylim= c(0,100))
+# R course for beginners
+# Week 6 part 1
+# assignment by Amir Mano, id 205779788
+#### prepare workspace ----
+rm(list = ls()) #or Ctrl + Shift + F10 & Ctrl + L
+# import packages
+library(tidyverse)
+#### creating and saving variables ----
+N = 20
+df <- data.frame(
+sub_id = seq(1,N),
+age = runif(N, 18, 60),
+gender = factor(sample(c('M','F'), N, replace=T)),
+stress = runif(N, 0, 10)
+)
+# adding satisfaction score
+b0 = 100
+b1 = -10
+df <- df |>
+mutate(satisfaction = rnorm(N,b0 + stress*b1),30)
+df <- df |>
+mutate(satisfaction = if_else(satisfaction > 100, 100, satisfaction),
+satisfaction = if_else(satisfaction < 0, 0, satisfaction))
+plot(df$stress,df$satisfaction, ylim= c(0,100))
+model <- lm(data = df, satisfaction ~ stress)
+summary(model)
+summary(model)
+A = summary(model)
+A
+A[1]
+A[2]
+A[3]
+A[4]
+A$coefficients
+A$coefficients[1]
+A$coefficients[2]
+model$coefficients[1,2]
+model$coefficients[1:2]
+source("C:/Users/amirm/Dropbox/אוניברסיטת תל אביב/תואר שלישי/סמסטר ג/היכרות עם R/HW_6_1.R", echo=TRUE)
+#### prepare workspace ----
+rm(list = ls()) #or Ctrl + Shift + F10 & Ctrl + L
+load('HW_6_1.RData')
+# import packages
+library(tidyverse)
+#### regression models ----
+model <- lm(data = df, satisfaction ~ stress)
+model$coefficients[1:2]
+correlation <- cor(data = df, satisfaction, stress)
+correlation <- cor(df$satisfaction, df$stress)
+correlation
+df<- df|> mutate(x_scaled <- scale(x))
+df<- df|> mutate(satisfaction_scaled <- scale(satisfaction))
+df<- df|> mutate(stress_scaled <- scale(stress))
+df<- df|> mutate(s_satisfaction <- scale(satisfaction))
+df<- df|> mutate(s_stress <- scale(stress))
+model_scaled <- lm(data = df, s_satisfaction ~ s_stress)
+source("C:/Users/amirm/Dropbox/אוניברסיטת תל אביב/תואר שלישי/סמסטר ג/היכרות עם R/HW_6_3.R", echo=TRUE)
+lm(data = df, s_satisfaction ~ s_stress)
+df$`s_satisfaction <- scale(satisfaction)`
+scale(satisfaction)
+df<- df|> mutate(s_satisfaction = scale(satisfaction))
+df<- df|> mutate(s_stress = scale(stress))
+model_scaled <- lm(data = df, s_satisfaction ~ s_stress)
+model_scaled$coefficients[1:2]
+plot(df$s_satisfaction, df$s_stress)
+model_scaled$coefficients[2]
+# R course for beginners
+# Week 6 part 2
+# assignment by Amir Mano, id 205779788
+#### prepare workspace ----
+rm(list = ls()) #or Ctrl + Shift + F10 & Ctrl + L
+load('HW_6_1.RData')
+# import packages
+library(tidyverse)
+library(ggplot2)
+library(patchwork)
+library(ggpubr)
+#### descriptive statistics ----
+cat('Age statistics:\n', summary(df)[c(1,6,4,3) ,2],'\n')
+cat('Female numbers:\n', df$sub_id[df$gender=='F'],'\n')
+cat('Male numbers:\n', df$sub_id[df$gender=='M'],'\n')
+#### plotting ----
+# with R based
+plot(df$stress,df$satisfaction, ylim= c(0,100),
+xlab = 'Stress Level', ylab = 'Satisfaction Score')
+title('with R based')
+abline(lm(df$satisfaction ~ df$stress), col = "red")
+plot1 <- recordPlot()
+# with ggplot
+plot2 <- ggplot(data = df, aes(x = stress, y = satisfaction)) +
+geom_smooth(method = "lm", color = "red3") +
+geom_point(color = "blue3", shape = 21, size = 4) +
+labs(title = "with ggplot2",
+x = "Stress Level",
+y = "Satisfaction Score") +
+theme_classic()
+plot3<- ggscatter(data = df, x = "stress", y = "satisfaction",
+color = "green4", shape = 21, size = 4,
+add = "reg.line",
+add.params = list(color = "red3", fill = "lightgray"),
+conf.int = TRUE) +
+labs(title = "with ggscatter",
+x = "Stress Level",
+y = "Satisfaction Score")
+plot1
+plot2 + plot3
+source("C:/Users/amirm/Dropbox/אוניברסיטת תל אביב/תואר שלישי/סמסטר ג/היכרות עם R/HW_6_1.R", echo=TRUE)
+source("C:/Users/amirm/Dropbox/אוניברסיטת תל אביב/תואר שלישי/סמסטר ג/היכרות עם R/HW_6_2.R", echo=TRUE)
+plot1
+?for
+()
+?for (variable in vector) {
+}
+for(i in 1:5) print(1:i)
+?grepl
+grep("2", "123432")
+grepl("2", "123432")
+grepl("2", c("123432"))
+grepl("2", c("1","2","3","4","3","2"))
+grep("2", c("1","2","3","4","3","2"))
