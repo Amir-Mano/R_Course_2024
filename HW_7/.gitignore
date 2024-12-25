@@ -1,0 +1,6 @@
+**/stroop_data/
+.Rhistory
+.Rproj.user
+*.csv
+*.RData
+*.Rproj
