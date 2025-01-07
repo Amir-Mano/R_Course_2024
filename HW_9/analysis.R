@@ -6,9 +6,10 @@
 source("HW_9/functions.R")
 
 # create data
-N = 5
+N = 15
 data <- create_df(N)
 
 # descriptive statistics
 stats <- calc_stats(data)
+
 

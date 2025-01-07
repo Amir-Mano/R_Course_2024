@@ -28,15 +28,45 @@ rnorm_range <- function(N, min, max){
 }
 
 #### functions for analyzing ----
-calc_stats <- function(df){
-  if (nrow(df)<10)
+calc_stats <- function(df) {
+  if (nrow(df) < 10) {
     print("data is too short")
+    return("data is too short")
+  }
   
-  continuous <- df[, !sapply(df, is.factor)] |> summary()
-  continuous <- continuous[c(1, 3, 4, 6), ]
+  continuous_stats <- list()
+  factor_stats <- list()
   
-  factors <- df[, sapply(df, is.factor)] |> summary()
-  factors <- data.frame(factors) |> filter(!is.na(Freq))
-  results <- rbind(data.frame(continuous), factors)
+  # Iterate over columns
+  for (colname in names(df)[2:length(df)]) {
+    col <- df |> pull(colname)
+    
+    if (class(col) == "numeric" || class(col) == "integer") {
+      # stats for non-factors
+      stats <- data.frame(
+        variable = colname,
+        mean = mean(col, na.rm = TRUE),
+        median = median(col, na.rm = TRUE),
+        min = min(col, na.rm = TRUE),
+        max = max(col, na.rm = TRUE)
+      )
+      continuous_stats[[colname]] <- stats
+    } else if (class(col) == "factor") {
+      # stats for factors
+      counts <- as.data.frame(table(category = col))
+      counts <- data.frame(variable = colname, counts)
+      factor_stats[[colname]] <- counts
+    }
+  }
+  
+  # Combine results
+  continuous_stats <- bind_rows(continuous_stats)
+  factor_stats <- bind_rows(factor_stats)
+
+  results <- bind_rows(
+    mutate(continuous_stats, type = "continuous"),
+    mutate(factor_stats, type = "factor"),
+    .id = "stat_type"
+  )
   return(results)
 }
