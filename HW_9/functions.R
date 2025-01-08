@@ -28,11 +28,17 @@ rnorm_range <- function(N, min, max){
 }
 
 #### functions for analyzing ----
-calc_stats <- function(df) {
+calc_stats <- function(df, subject_start, subject_end) {
   if (nrow(df) < 10) {
     print("data is too short")
     return("data is too short")
   }
+  if(missing(subject_start))
+    subject_start <- 1
+  if(missing(subject_end))
+    subject_end <- nrow(df)
+  
+  df <- df[subject_start:subject_end,]
   
   continuous_stats <- list()
   factor_stats <- list()

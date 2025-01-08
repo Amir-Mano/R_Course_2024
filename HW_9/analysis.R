@@ -10,6 +10,6 @@ N = 15
 data <- create_df(N)
 
 # descriptive statistics
-stats <- calc_stats(data)
+stats <- calc_stats(data, 10, 14)
 
 
