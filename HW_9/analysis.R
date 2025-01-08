@@ -11,5 +11,7 @@ data <- create_df(N)
 
 # descriptive statistics
 stats <- calc_stats(data, 10, 14)
+print(stats)
+
 
 
