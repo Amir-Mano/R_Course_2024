@@ -5,8 +5,8 @@
 ### import libraries ----
 library(tidyverse)
 library(ggdist)
-library(patchwork)
-
+library(ggplot2)
+#library(patchwork)
 
 #### functions for plotting ----
 plotting_rain <- function(df, x_values){
@@ -28,8 +28,23 @@ plotting_rain <- function(df, x_values){
     theme(axis.ticks.y = element_blank(), axis.text.y = element_blank())
 }
 
-plot_both_variables <- function(df){
-  plot1 <- plotting_rain(df, df$AoO) + labs (title="Age of Onset", x ="Age of Onset")
-  plot2 <- plotting_rain(df, df$practice) + labs (title="Weekly Practice", x ="Avg Weekly Practice (Hr)")
-  plot1 + plot2
+plot_scatter <- function(df, var_x, var_y){
+  ggplot(data = df, aes(x = var_x, y = var_y)) +
+    geom_smooth(method = "lm", color = "red4") +
+    geom_point(color = "skyblue3", shape = 16, size = 4) +
+    theme_classic()
+}
+
+plot_graphs_to_pdf <- function(df){
+  pdf(file="final_project/exploratory_plotting.pdf")
+  print(
+    plotting_rain(df, df$AoO) + labs (title="Age of Onset", x ="Age of Onset")
+  )
+  print(
+    plotting_rain(df, df$practice) + labs (title="Weekly Practice", x ="Avg Weekly Practice (Hr)")
+  )
+  print(
+    plot_scatter(df, df$practice, df$AoO)  + labs(title = "Age of Onset - Weekly practice", x = "Weekly Practice", y = "AoO")
+  )
+  dev.off()
 }

@@ -9,6 +9,5 @@ source("final_project/plotting_functions.R")
 df <- read.csv('final_project/data.csv')
 
 # exploratory plotting
-pdf(file="final_project/exploratory_plotting.pdf")
-plot_both_variables(df)
-dev.off()
+plot_graphs_to_pdf(df)
+

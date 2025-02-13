@@ -19,10 +19,20 @@ As it is not a direct part of my study, I found it interesting to look for this 
 
 **A.2:**
 
+created 3 graphs, were saved to "exploratory_plotting.pdf"
+
+**A.3:**
+Main question:
+Is the age in which the individual started his musical journey (a.k.a Age-of-Onset - AoO) affects his practice routine?
+
+Further questions:
+If there is an effect - does this effect depends on the kind of instrument the individual is playing?
+
+**B.1:**
 
 ### TODO ###
+- Linear regression to see if there is a connection between practice and AoO.
 - Logistic regression to see if there is a connection between weekly practice alone and Wind (or Keyboard) playing.
 - Logistic regression to see if there is a connection between weekly practice, AoO, and Wind (or Keyboard) playing.
-- Linear regression to see if there is a connection between practice and AoO.
 
 *make sure to remove Null data
