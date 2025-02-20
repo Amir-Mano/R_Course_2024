@@ -16,5 +16,7 @@ plot_graphs_to_pdf(df)
 
 # process data
 df <- remove_nans(df)
+df <- generate_anonymized_ids(df)
+df <- truncate_extreme_values(df)
 df <- create_binary_values(df)
 

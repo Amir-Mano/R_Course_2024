@@ -52,7 +52,11 @@ All plotting and data-processing processes were made using functions that I crea
 
 **B.4:**
 
-TODO
+Using the library "digest" in order to anonymize the subjects' ids, and to make the ids continuous after removing irrelevant rows.
+
+
+**C.1:**
+
 
 
 
