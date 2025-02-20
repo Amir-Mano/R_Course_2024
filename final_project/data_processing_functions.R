@@ -22,10 +22,9 @@ fill_instrument_group <- function(df){
   return(df)
 }
 
-remove_nans <- function(df){
-  remove_indexes <-is.na(df$main_instrument) | is.na(df$practice) 
+remove_nans <- function(df, column){
+  remove_indexes <-is.na(df$main_instrument) | is.na(column) 
   df<- df|> filter(!remove_indexes)
-  df <- df |> select(sub_id, main_instrument, instrument_group, practice, AoO)
   return(df)
 }
 
