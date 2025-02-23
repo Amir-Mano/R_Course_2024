@@ -4,11 +4,12 @@
 
 # import libraries and functions
 source("final_project/data_processing_functions.R")
+library(pROC)
 
 linear_regression <- function(df, outcome, predictors){
   formula <- as.formula(paste(outcome, "~", paste(predictors, collapse = " + ")))
   model <- lm(formula, data = df)
-  return(summary(model))
+  return(model)
 }
 
 logistic_regression <- function(df, outcome, predictors = NULL){
@@ -20,7 +21,7 @@ logistic_regression <- function(df, outcome, predictors = NULL){
   }
   
   model <- glm(formula, data = df, family = binomial())
-  return(summary(model))
+  return(model)
 }
 
 multiple_linear_regression <- function(df, column){
@@ -45,3 +46,19 @@ multiple_logistic_regressions <- function(df, column){
   
   return(list(model1 = model1, model2 = model2, model3 = model3, model4 = model4))
 }
+
+compute_auc <- function(models, df, outcome) {
+  predictions <- list()
+  roc_curves <- list()
+  auc_values <- list()
+  
+  for (model_name in names(models)) {
+    predictions[[model_name]] <- predict(models[[model_name]], df, type = "response")
+    roc_curves[[model_name]] <- roc(df[[outcome]], predictions[[model_name]])
+    auc_values[[model_name]] <- auc(roc_curves[[model_name]])
+  }
+  
+  return(list(predictions = predictions, roc_curves = roc_curves, auc_values = auc_values))
+}
+
+

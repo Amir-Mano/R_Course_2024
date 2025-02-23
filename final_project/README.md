@@ -69,3 +69,12 @@ model3 - predictors: "practice". smaller data sample to compare with model4.
 model4 - predictors: "practice", "AoO". Adding AoO to check its contribution to the prediction. smaller data sample as some AoO values are missing. 
 
 **C.2:**
+
+
+**C.3:**
+
+
+**C.4:**
+
+created 2 graphs, were saved to "ROC_plotting.pdf"
+
