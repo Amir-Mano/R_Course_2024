@@ -23,7 +23,7 @@ fill_instrument_group <- function(df){
 }
 
 remove_nans <- function(df, column){
-  remove_indexes <-is.na(df$main_instrument) | is.na(column) 
+  remove_indexes <-is.na(df$main_instrument) | is.na(df[[column]]) 
   df<- df|> filter(!remove_indexes)
   return(df)
 }

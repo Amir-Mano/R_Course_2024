@@ -25,10 +25,10 @@ created 3 graphs, were saved to "exploratory_plotting.pdf"
 
 **A.3:**
 
-Main question:
+Main Question:
 Is the age in which the individual started his musical journey (a.k.a Age-of-Onset - AoO) affects his practice routine?
 
-Further questions:
+Further Questions:
 If there is an effect - does this effect depends on the kind of instrument the individual is playing?
 
 
@@ -57,10 +57,15 @@ Using the library "digest" in order to anonymize the subjects' ids, and to make 
 
 **C.1:**
 
+**Linear regression** - building 4 models in order to look at the connection between practice and AoO.
+model1 - outcome: "AoO", predictors: "practice". To answer the "Main Question".
+model2/3 - outcome: "AoO", predictors: "practice", "is_wind"/"is_keyboard". To check whether adding the instrument group, can contribute to the model (""Further Questions").
+model4 - outcome: "AoO", predictors: "practice", "is_wind", "is_keyboard". combining all variables.
 
+**Linear regression** - building 4 models for each outcome ("is_wind"/"is_keyboard")  in order to further understand the connection between an instrument, practice, and AoO.
+model1 - without predictors. Null model, to define baseline.
+model2 - predictors: "practice". To check whether practice alone can predict the instrument group.
+model3 - predictors: "practice". smaller data sample to compare with model4.
+model4 - predictors: "practice", "AoO". Adding AoO to check its contribution to the prediction. smaller data sample as some AoO values are missing. 
 
-
-### TODO ###
-- Linear regression to see if there is a connection between practice and AoO.
-- Logistic regression to see if there is a connection between weekly practice alone and Wind (or Keyboard) playing.
-- Logistic regression to see if there is a connection between weekly practice, AoO, and Wind (or Keyboard) playing.
+**C.2:**
