@@ -62,13 +62,35 @@ model1 - outcome: "AoO", predictors: "practice". To answer the "Main Question".
 model2/3 - outcome: "AoO", predictors: "practice", "is_wind"/"is_keyboard". To check whether adding the instrument group, can contribute to the model (""Further Questions").
 model4 - outcome: "AoO", predictors: "practice", "is_wind", "is_keyboard". combining all variables.
 
-**Linear regression** - building 4 models for each outcome ("is_wind"/"is_keyboard")  in order to further understand the connection between an instrument, practice, and AoO.
+**Logistic regression** - building 4 models for each outcome ("is_wind"/"is_keyboard")  in order to further understand the connection between an instrument, practice, and AoO.
 model1 - without predictors. Null model, to define baseline.
 model2 - predictors: "practice". To check whether practice alone can predict the instrument group.
 model3 - predictors: "practice". smaller data sample to compare with model4.
 model4 - predictors: "practice", "AoO". Adding AoO to check its contribution to the prediction. smaller data sample as some AoO values are missing. 
 
 **C.2:**
+
+**Linear regression**
+model1: AoO = 9.97545 − 0.06725 × Practice
+The Intercept (9.97545) represents the estimated AoO for a participant with zero hours of practice.
+The Practice coefficient (-0.06725) suggests that for each additional hour of practice per week, the AoO decreases by 0.067 years on average.
+This negative relationship suggests that individuals who started practicing at a younger age tend to practice more.
+
+model2: AoO = 9.37515 - 0.06457 X Practice + 1.23518 X is_wind
+The Intercept (9.37515) represents the estimated AoO for non-wind players with zero practice hours.
+The Practice coefficient (-0.06457) remains similar to Model 1, indicating small reduction in the strength of the effect when accounting for instrument group.
+The is_wind coefficient (1.23518) suggests that wind instrument players start on average 1.235 years later than non-wind players, when controlling for practice.
+
+model3: AoO = 10.01778 - 0.06672 X Practice - 0.45409 X is_keyboard
+The Intercept (10.01778) represents the estimated AoO for non-keyboard players with zero practice hours.
+The Practice coefficient (-0.06672) remains similar to previous models, indicating a consistent negative relationship between practice and AoO.
+The is_keyboard coefficient (-0.45409) suggests that keyboard players start, on average, 0.45 years earlier than non-keyboard players. This can be inferred from comparing this intercept to previous ones.
+
+model4: {AoO} = 9.33754 - 0.06471 X Practice + 1.27462 X is_wind + 0.19787 X is_keyboard
+The Intercept (9.33754) represents the estimated AoO for non-wind and non-keyboard players with zero practice hours.
+The Practice coefficient (-0.06471) remains negative, showing that practice is still associated with an earlier AoO.
+The is_wind coefficient (1.27462) confirms that wind players tend to start approximately 1.27 years later than non-wind players, consistent with Model 2.
+The is_keyboard coefficient (0.19787) suggests that keyboard players tend to start slightly later than non-keyboard players.
 
 
 **C.3:**
