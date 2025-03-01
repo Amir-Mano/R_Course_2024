@@ -1,7 +1,7 @@
 # Results (Question C.2) #
 *Model explanations*
 
-### Linear regression ###
+## Linear regression ##
 
 **model1: AoO = 9.97545 − 0.06725 × Practice**
 
@@ -28,14 +28,14 @@ The Practice coefficient (-0.06471) remains negative, showing that practice is s
 The is_wind coefficient (1.27462) confirms that wind players tend to start approximately 1.27 years later than non-wind players, consistent with Model 2.
 The is_keyboard coefficient (0.19787) suggests that keyboard players tend to start slightly later than non-keyboard players.
 
-** Conclusions **
+**Conclusions**
 
 The strongest predictor of AoO is Practice, with a negative relationship across all models.
 Adding instrument group variables (is_wind, is_keyboard) changes the intercept and slightly affects the Practice coefficient, indicating that instrument type contributes to AoO variance.
 
 
-### Logistic regression ###
-*Logistic regression - Wind*
+## Logistic regression ##
+### Logistic regression - Wind ###
 
 **model1: log-odds = -0.384**
 
@@ -58,7 +58,9 @@ The AoO coefficient (0.09938) suggests that for each additional year of AoO, the
 This suggests that starting music at a later age increases the likelihood of being a wind player.
 
 
-*Logistic Regression - Keyboards*
+
+
+### Logistic Regression - Keyboards ###
 
 **model1: log-odds = -1.833**
 
@@ -81,7 +83,7 @@ The Practice coefficient (+0.00929) remains positive, reinforcing the idea that 
 The AoO coefficient (-0.03791) suggests that for each additional year of AoO, the odds of being a keyboard player decrease.
 This model suggests that keyboard players tend to start playing music at an earlier age compared to others.
 
-** Conclusions **
+**Conclusions**
 
 Wind players tend to start later than other musicians, while Keyboards players tend to start earlier.
 Practice has only a small impact on predicting Wind players, and mixed results when predicting Keyboards players.
