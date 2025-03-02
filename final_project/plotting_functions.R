@@ -70,3 +70,31 @@ plot_roc_to_pdf <- function(aucs1, aucs2){
   )
   dev.off()
 }
+
+plot_linear_models <- function(df, group_var) {
+  model_label <- ifelse(group_var == "is_wind", "Model 2 - Wind", "Model 3 - Keyboard")
+  
+  ggplot(df, aes(x = practice, y = AoO)) +
+    geom_point(aes(color = factor(df[[group_var]])), alpha = 0.6) +
+    geom_smooth(aes(color = factor(df[[group_var]])), method = "lm", se = FALSE) +
+    geom_smooth(aes(color = "Model 1 - Overall Trend"), method = "lm", linetype = "dashed", se = FALSE) +
+    scale_color_manual(values = c("Model 1 - Overall Trend" = "black", "0" = "skyblue2", "1" = "red4"),
+                       labels = c("Model 1 - Overall Trend", "0" = paste(model_label, "- False"), "1" = paste(model_label, "- True"))) +
+    labs(title = paste("Linear Models for", ifelse(group_var == "is_wind", "Wind Players", "Keyboard Players")),
+         x = "Weekly Practice Hours",
+         y = "Age of Onset (AoO)",
+         color = "Model") +
+    theme_minimal()
+}
+
+plot_linear_models_to_pdf <- function(df){
+  pdf(file="final_project/Linear_Models_plotting.pdf")
+  print(
+    plot_linear_models(df, "is_wind")
+  )
+  print(
+    plot_linear_models(df, "is_keyboard")
+  )
+  dev.off()
+}
+

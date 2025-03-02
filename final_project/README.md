@@ -70,7 +70,7 @@ model4 - predictors: "practice", "AoO". Adding AoO to check its contribution to 
 
 **C.2:**
 
-Saved as additional file - "Results - C2.md"
+Saved as an additional file - "Results - C2.md"
 
 
 **C.3:**

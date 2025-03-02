@@ -23,6 +23,7 @@ df <- create_binary_values(df)
 
 # linear regression model
 models_linear <- multiple_linear_regression(df, "AoO")
+plot_linear_models_to_pdf(df)
 
 # logistic regression models
 models_logistic_wind <- multiple_logistic_regressions(df, "is_wind")
@@ -32,6 +33,3 @@ models_logistic_keyboards <- multiple_logistic_regressions(df, "is_keyboard")
 aucs_wind <- compute_auc(models_logistic_wind, df, "is_wind")
 aucs_keyboards <- compute_auc(models_logistic_wind, df, "is_keyboard")
 plot_roc_to_pdf(aucs_wind, aucs_keyboards)
-
-
-
