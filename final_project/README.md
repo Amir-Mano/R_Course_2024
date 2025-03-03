@@ -75,8 +75,11 @@ Saved as an additional file - "Results - C2.md"
 
 **C.3:**
 
+created 2 graphs for Linear models (model1/model2, model1/model3), were saved to "Linear_Models_plotting.pdf"
+created 2 graphs for Logistic models (Wind - models1-4, Keyboard - models1-4), were saved to "Logistic_Models_plotting.pdf"
+
 
 **C.4:**
 
-created 2 graphs, were saved to "ROC_plotting.pdf"
+created 2 graphs (Wind - models1-4, Keyboard - models1-4), were saved to "ROC_plotting.pdf"
 

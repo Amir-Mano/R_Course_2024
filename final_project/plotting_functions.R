@@ -6,9 +6,8 @@
 library(tidyverse)
 library(ggdist)
 library(ggplot2)
-#library(patchwork)
 
-#### functions for plotting ----
+#### functions for plotting exploratory ----
 plotting_rain <- function(df, x_values){
   ggplot(df, aes(x=x_values, y=instrument_group, fill=instrument_group)) +
     stat_halfeye(.width=c(0.9, 0.5), color='darkred',scale=0.5) +
@@ -49,28 +48,8 @@ plot_exploratory_to_pdf <- function(df){
   dev.off()
 }
 
-plot_roc_curves <- function(auc_results, title_text = "") {
-  colors = c("blue2", "red2", "green3", "purple")
-  roc_curves <- auc_results$roc_curves
-  plot(roc_curves[[1]], col = colors[1])
-  for (i in 2:length(roc_curves)) {
-    plot(roc_curves[[i]], add = TRUE, col = colors[i])
-  }
-  title(title_text)
-  legend("right", legend = names(roc_curves), col = colors, lwd = 3)
-}
 
-plot_roc_to_pdf <- function(aucs1, aucs2){
-  pdf(file="final_project/ROC_plotting.pdf")
-  print(
-    plot_roc_curves(aucs1, "ROC Curve Comparison - Wind")
-  )
-  print(
-    plot_roc_curves(aucs2, "ROC Curve Comparison - Keyboard")
-  )
-  dev.off()
-}
-
+#### functions for plotting models ----
 plot_linear_models <- function(df, group_var) {
   model_label <- ifelse(group_var == "is_wind", "Model 2 - Wind", "Model 3 - Keyboard")
   
@@ -94,6 +73,74 @@ plot_linear_models_to_pdf <- function(df){
   )
   print(
     plot_linear_models(df, "is_keyboard")
+  )
+  dev.off()
+}
+
+plot_logistic_models <- function(df, models, group_name) {
+  practice_seq <- seq(min(df$practice), max(df$practice), length.out = 100)
+  pred_data <- data.frame(practice = practice_seq, AoO = mean(df$AoO, na.rm = TRUE))  # Use mean AoO for models that need it
+  
+  pred_data$model1_prob <- predict(models$model1, newdata = pred_data, type = "response")
+  pred_data$model2_prob <- predict(models$model2, newdata = pred_data, type = "response")
+  pred_data$model3_prob <- predict(models$model3, newdata = pred_data, type = "response")
+  pred_data$model4_prob <- predict(models$model4, newdata = pred_data, type = "response")
+  
+  ggplot(df, aes(x = practice, y = as.numeric(df$is_wind))) +
+    geom_point(alpha = 0.5, color = "gray") +
+    
+    geom_line(data = pred_data, aes(x = practice, y = model1_prob, color = "Model 1 - Intercept Only"), linetype = "dashed", size = 1.2) +
+    geom_line(data = pred_data, aes(x = practice, y = model2_prob, color = "Model 2 - Practice"), size = 1.2) +
+    geom_line(data = pred_data, aes(x = practice, y = model3_prob, color = "Model 3 - Practice - subset"), size = 1.2) +
+    geom_line(data = pred_data, aes(x = practice, y = model4_prob, color = "Model 4 - Practice + AoO"), size = 1.2) +
+    
+    scale_color_manual(
+      values = c("Model 1 - Intercept Only" = "black",
+                 "Model 2 - Practice" = "palegreen",
+                 "Model 3 - Practice - subset" = "palegreen3",
+                 "Model 4 - Practice + AoO" = "palegreen4"),
+      labels = c("Model 1 - Intercept Only",
+                 "Model 2 - Practice",
+                 "Model 3 - Practice - subset",
+                 "Model 4 - Practice + AoO")
+    ) +
+    labs(title = paste("Logistic Regression Models for", group_name, "Players"),
+         x = "Weekly Practice Hours",
+         y = paste("Probability of Being a", group_name, "Player"),
+         color = "Model") +
+    theme_minimal()
+}
+
+plot_logistic_models_to_pdf <- function(df, models_wind, models_keyboards){
+  pdf(file="final_project/Logistic_Models_plotting.pdf")
+  print(
+    plot_logistic_models(df, models_wind, "Wind")
+  )
+  print(
+    plot_logistic_models(df, models_keyboards, "Keyboard")
+  )
+  dev.off()
+}
+
+#### functions for plotting ROC ----
+plot_roc_curves <- function(auc_results, title_text = "") {
+  colors = c("blue2", "red2", "green3", "purple")
+  roc_curves <- auc_results$roc_curves
+  plot(roc_curves[[1]], col = colors[1])
+  for (i in 2:length(roc_curves)) {
+    plot(roc_curves[[i]], add = TRUE, col = colors[i])
+  }
+  title(title_text)
+  legend("right", legend = names(roc_curves), col = colors, lwd = 3)
+}
+
+plot_roc_to_pdf <- function(aucs1, aucs2){
+  pdf(file="final_project/ROC_plotting.pdf")
+  print(
+    plot_roc_curves(aucs1, "ROC Curve Comparison - Wind")
+  )
+  print(
+    plot_roc_curves(aucs2, "ROC Curve Comparison - Keyboard")
   )
   dev.off()
 }

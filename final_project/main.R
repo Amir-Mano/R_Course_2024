@@ -28,6 +28,7 @@ plot_linear_models_to_pdf(df)
 # logistic regression models
 models_logistic_wind <- multiple_logistic_regressions(df, "is_wind")
 models_logistic_keyboards <- multiple_logistic_regressions(df, "is_keyboard")
+plot_logistic_models_to_pdf(df, models_logistic_wind, models_logistic_keyboards)
 
 # plotting ROC graphs
 aucs_wind <- compute_auc(models_logistic_wind, df, "is_wind")
