@@ -2,12 +2,13 @@
 # Final Assignment - Main
 # assignment by Amir Mano, id 205779788
 
-# import libraries and functions
+#### import libraries and functions ----
 rm(list = ls()) #or Ctrl + Shift + F10 & Ctrl + L
 source("final_project/plotting_functions.R")
 source("final_project/data_processing_functions.R")
 source("final_project/analysis_functions.R")
 
+#### A ----
 # read data
 df <- read.csv('final_project/data.csv')
 
@@ -15,12 +16,14 @@ df <- read.csv('final_project/data.csv')
 df <- fill_instrument_group(df)
 plot_exploratory_to_pdf(df)
 
+#### B ----
 # process data
 df <- remove_nans(df, "practice")
 df <- generate_anonymized_ids(df)
 df <- truncate_extreme_values(df)
 df <- create_binary_values(df)
 
+#### C ----
 # linear regression model
 models_linear <- multiple_linear_regression(df, "AoO")
 plot_linear_models_to_pdf(df)

@@ -21,6 +21,9 @@ As it is not a direct part of my study, I found it interesting to look for this 
 
 In order to have meaningful exploration, I first divided the instruments to groups (6 in total).
 created 3 graphs, were saved to "exploratory_plotting.pdf"
+From the plots, seems that (1) there are much more Wind players than other groups;
+(2) Strings starts playing earlier, while Wind are more diverse in their AoO.
+(3) The data suggests that the earlier one starts playing the more weekly practice he will be making.
 
 
 **A.3:**
@@ -82,4 +85,5 @@ created 2 graphs for Logistic models (Wind - models1-4, Strings - models1-4), we
 **C.4:**
 
 created 2 graphs (Wind - models1-4, Strings - models1-4), were saved to "ROC_plotting.pdf"
-
+AUC of Wind prediction shows slightly better predictions when using more complex models (model1 0.5, model2/3 0.5083, model4 0.6292).
+AUC of Strings prediction shows real improvement as using more complex models (model1 0.5, model2/3 0.7116, model4 0.8346).

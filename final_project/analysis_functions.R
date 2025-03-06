@@ -2,10 +2,11 @@
 # Final Assignment - analysis functions
 # assignment by Amir Mano, id 205779788
 
-# import libraries and functions
+#### import libraries and functions ----
 source("final_project/data_processing_functions.R")
 library(pROC)
 
+#### building single models ----
 linear_regression <- function(df, outcome, predictors){
   formula <- as.formula(paste(outcome, "~", paste(predictors, collapse = " + ")))
   model <- lm(formula, data = df)
@@ -24,6 +25,7 @@ logistic_regression <- function(df, outcome, predictors = NULL){
   return(model)
 }
 
+#### building multiple models ----
 multiple_linear_regression <- function(df, column){
   df <- remove_nans(df, column)
   
@@ -47,6 +49,7 @@ multiple_logistic_regressions <- function(df, column){
   return(list(model1 = model1, model2 = model2, model3 = model3, model4 = model4))
 }
 
+#### other calculations ----
 compute_auc <- function(models, df, outcome) {
   predictions <- list()
   roc_curves <- list()
