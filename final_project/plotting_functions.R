@@ -51,7 +51,7 @@ plot_exploratory_to_pdf <- function(df){
 
 #### functions for plotting models ----
 plot_linear_models <- function(df, group_var) {
-  model_label <- ifelse(group_var == "is_wind", "Model 2 - Wind", "Model 3 - Keyboard")
+  model_label <- ifelse(group_var == "is_wind", "Model 2 - Wind", "Model 3 - Strings")
   
   ggplot(df, aes(x = practice, y = AoO)) +
     geom_point(aes(color = factor(df[[group_var]])), alpha = 0.6) +
@@ -59,7 +59,7 @@ plot_linear_models <- function(df, group_var) {
     geom_smooth(aes(color = "Model 1 - Overall Trend"), method = "lm", linetype = "dashed", se = FALSE) +
     scale_color_manual(values = c("Model 1 - Overall Trend" = "black", "0" = "skyblue2", "1" = "red4"),
                        labels = c("Model 1 - Overall Trend", "0" = paste(model_label, "- False"), "1" = paste(model_label, "- True"))) +
-    labs(title = paste("Linear Models for", ifelse(group_var == "is_wind", "Wind Players", "Keyboard Players")),
+    labs(title = paste("Linear Models for", ifelse(group_var == "is_wind", "Wind Players", "Strings Players")),
          x = "Weekly Practice Hours",
          y = "Age of Onset (AoO)",
          color = "Model") +
@@ -72,7 +72,7 @@ plot_linear_models_to_pdf <- function(df){
     plot_linear_models(df, "is_wind")
   )
   print(
-    plot_linear_models(df, "is_keyboard")
+    plot_linear_models(df, "is_strings")
   )
   dev.off()
 }
@@ -86,7 +86,7 @@ plot_logistic_models <- function(df, models, group_name) {
   pred_data$model3_prob <- predict(models$model3, newdata = pred_data, type = "response")
   pred_data$model4_prob <- predict(models$model4, newdata = pred_data, type = "response")
   
-  ggplot(df, aes(x = practice, y = as.numeric(df$is_wind))) +
+  ggplot(df, aes(x = practice, y = as.numeric(df[[group_name]]))) +
     geom_point(alpha = 0.5, color = "gray") +
     
     geom_line(data = pred_data, aes(x = practice, y = model1_prob, color = "Model 1 - Intercept Only"), linetype = "dashed", size = 1.2) +
@@ -111,13 +111,13 @@ plot_logistic_models <- function(df, models, group_name) {
     theme_minimal()
 }
 
-plot_logistic_models_to_pdf <- function(df, models_wind, models_keyboards){
+plot_logistic_models_to_pdf <- function(df, models_wind, models_strings){
   pdf(file="final_project/Logistic_Models_plotting.pdf")
   print(
-    plot_logistic_models(df, models_wind, "Wind")
+    plot_logistic_models(df, models_wind, "is_wind")
   )
   print(
-    plot_logistic_models(df, models_keyboards, "Keyboard")
+    plot_logistic_models(df, models_strings, "is_strings")
   )
   dev.off()
 }
@@ -140,7 +140,7 @@ plot_roc_to_pdf <- function(aucs1, aucs2){
     plot_roc_curves(aucs1, "ROC Curve Comparison - Wind")
   )
   print(
-    plot_roc_curves(aucs2, "ROC Curve Comparison - Keyboard")
+    plot_roc_curves(aucs2, "ROC Curve Comparison - Strings")
   )
   dev.off()
 }

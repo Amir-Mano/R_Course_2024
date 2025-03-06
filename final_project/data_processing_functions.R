@@ -38,7 +38,7 @@ truncate_extreme_values <- function(df){
 
 create_binary_values <- function(df){
   df <- df |> mutate(is_wind = ifelse(grepl("Wind", instrument_group), 1,0))
-  df <- df |> mutate(is_keyboard = ifelse(grepl("Keyboards", instrument_group), 1,0))
+  df <- df |> mutate(is_strings = ifelse(grepl("Strings", instrument_group), 1,0))
   return(df)
 }
 

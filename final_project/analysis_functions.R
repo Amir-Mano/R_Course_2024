@@ -29,8 +29,8 @@ multiple_linear_regression <- function(df, column){
   
   model1 <- linear_regression(df, column, c("practice"))
   model2 <- linear_regression(df, column, c("practice", "is_wind"))
-  model3 <- linear_regression(df, column, c("practice", "is_keyboard"))
-  model4 <- linear_regression(df, column, c("practice", "is_wind", "is_keyboard"))
+  model3 <- linear_regression(df, column, c("practice", "is_strings"))
+  model4 <- linear_regression(df, column, c("practice", "is_wind", "is_strings"))
   
   return(list(model1 = model1, model2 = model2, model3 = model3, model4 = model4))
 }

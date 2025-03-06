@@ -27,10 +27,10 @@ plot_linear_models_to_pdf(df)
 
 # logistic regression models
 models_logistic_wind <- multiple_logistic_regressions(df, "is_wind")
-models_logistic_keyboards <- multiple_logistic_regressions(df, "is_keyboard")
-plot_logistic_models_to_pdf(df, models_logistic_wind, models_logistic_keyboards)
+models_logistic_strings <- multiple_logistic_regressions(df, "is_strings")
+plot_logistic_models_to_pdf(df, models_logistic_wind, models_logistic_strings)
 
 # plotting ROC graphs
 aucs_wind <- compute_auc(models_logistic_wind, df, "is_wind")
-aucs_keyboards <- compute_auc(models_logistic_wind, df, "is_keyboard")
-plot_roc_to_pdf(aucs_wind, aucs_keyboards)
+aucs_strings <- compute_auc(models_logistic_wind, df, "is_strings")
+plot_roc_to_pdf(aucs_wind, aucs_strings)

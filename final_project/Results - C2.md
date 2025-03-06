@@ -15,23 +15,24 @@ The Intercept (9.37515) represents the estimated AoO for non-wind players with z
 The Practice coefficient (-0.06457) remains similar to Model 1, indicating small reduction in the strength of the effect when accounting for instrument group.
 The is_wind coefficient (1.23518) suggests that wind instrument players start on average 1.235 years later than non-wind players, when controlling for practice.
 
-**model3: AoO = 10.01778 - 0.06672 X Practice - 0.45409 X is_keyboard**
+**model3: AoO = 10.0768 - 0.0409 X Practice - 3.3422 X is_strings**
 
-The Intercept (10.01778) represents the estimated AoO for non-keyboard players with zero practice hours.
-The Practice coefficient (-0.06672) remains similar to previous models, indicating a consistent negative relationship between practice and AoO.
-The is_keyboard coefficient (-0.45409) suggests that keyboard players start, on average, 0.45 years earlier than non-keyboard players. This can be inferred from comparing this intercept to previous ones.
+The Intercept (10.0768) represents the estimated AoO for non-strings players with zero practice hours.
+The Practice coefficient (-0.0409) is smaller than in previous models, suggesting a slightly weaker relationship between practice and AoO of non-strings players.
+The is_strings coefficient (-3.3422) suggests that strings players start 3.3 years earlier than non-strings players.
 
-**model4: AoO = 9.33754 - 0.06471 X Practice + 1.27462 X is_wind + 0.19787 X is_keyboard**
+**model4: AoO = 9.82232 - 0.04197 X Practice + 0.50642 X is_wind - 3.0671 X is_strings**
 
-The Intercept (9.33754) represents the estimated AoO for non-wind and non-keyboard players with zero practice hours.
-The Practice coefficient (-0.06471) remains negative, showing that practice is still associated with an earlier AoO.
-The is_wind coefficient (1.27462) confirms that wind players tend to start approximately 1.27 years later than non-wind players, consistent with Model 2.
-The is_keyboard coefficient (0.19787) suggests that keyboard players tend to start slightly later than non-keyboard players.
+The intercept (9.82232) represents the estimated AoO for musicians who are neither wind nor strings players and have zero weekly practice hours.
+The practice coefficient (-0.04197) remains negative, reinforcing the idea that greater weekly practice is associated with an earlier AoO.
+The is_wind coefficient (0.50642) suggests that wind players start later than other musicians, but the effect size is smaller than in Model 2.
+The is_strings coefficient (-3.0671) confirms that strings players start much earlier than other musicians.
 
 **Conclusions**
 
 The strongest predictor of AoO is Practice, with a negative relationship across all models.
-Adding instrument group variables (is_wind, is_keyboard) changes the intercept and slightly affects the Practice coefficient, indicating that instrument type contributes to AoO variance.
+Wind players tend to start playing later than other musicians, while strings players start significantly earlier.
+Adding instrument group variables (is_wind, is_strings) affects the intercepts and slightly adjusts the practice coefficient, indicating that instrument type influences AoO variation.
 
 
 ## Logistic regression ##
@@ -60,30 +61,31 @@ This suggests that starting music at a later age increases the likelihood of bei
 
 
 
-### Logistic Regression - Keyboards ###
+### Logistic Regression - Strings ###
 
-**model1: log-odds = -1.833**
+**model1: log-odds = -1.907**
 
-The intercept (-1.833) represents the log-odds of being a keyboard player when no predictors are included.
-The result is p = 0.14, meaning that without considering any variables, the estimated probability of a musician being a keyboard player is ~14%.
+The intercept (-1.907) represents the log-odds of being a strings player when no predictors are included.
+The result is p = 0.14, meaning that without considering any variables, the estimated probability of a musician being a strings player is ~14%.
 
-**model2: log-odds = -1.58846 - 0.02067 × Practice**
+**model2: log-odds = -2.99640 + 0.06955 × Practice**
 
-The intercept (-1.58846) represents the log-odds of being a keyboard player when practice is 0.
-The Practice coefficient (-0.02067) suggests that each additional hour of practice per week decreases the odds of being a keyboard player.
+The intercept (-2.99640) represents the log-odds of being a strings player when practice is 0.
+The Practice coefficient (0.06955) suggests that each additional hour of practice per week increases the odds of being a strings player.
 
-**model3 (same sample of model4): log-odds = -2.2642 + 0.0117 × Practice**
+**model3 (same sample of model4): log-odds = -2.82905 + 0.06164 × Practice**
 
-The intercept (-2.2642) is lower than in previous models, suggesting a lower baseline probability of being a keyboard player in this subset.
-The Practice coefficient (+0.0117) has changed direction, meaning that here, more practice is slightly associated with a higher likelihood of being a keyboard player.
+The intercept (-2.82905) is slightly higher than in Model 2, suggesting a different baseline probability of being a strings player in this subset.
+The practice coefficient (0.06164) remains positive, reinforcing the idea that more practice is associated with increased odds of playing a string instrument.
 
-**model4: log-odds = -1.89516 + 0.00929 × Practice - 0.03791 × AoO**
+**model4: log-odds = +1.13713 + 0.05889 × Practice -0.52902 × AoO**
 
-The Practice coefficient (+0.00929) remains positive, reinforcing the idea that practice might be slightly associated with higher odds of being a keyboard player.
-The AoO coefficient (-0.03791) suggests that for each additional year of AoO, the odds of being a keyboard player decrease.
-This model suggests that keyboard players tend to start playing music at an earlier age compared to others.
+The practice coefficient (0.05889) remains positive, confirming the trend that increased practice is linked to a higher likelihood of being a strings player.
+The AoO coefficient (-0.52902) suggests that for each additional year of AoO, the odds of being a strings player decrease.
+This model suggests that strings players tend to start playing music at an earlier age compared to others.
 
 **Conclusions**
 
-Wind players tend to start later than other musicians, while Keyboards players tend to start earlier.
-Practice has only a small impact on predicting Wind players, and mixed results when predicting Keyboards players.
+Wind players tend to start later than other musicians, while strings players tend to start earlier.
+Practice is positively associated with being a strings player, but its effect on wind players is minimal.
+AoO plays a significant role in predicting instrument group, with later AoO increasing the likelihood of wind players and decreasing the likelihood of strings players.

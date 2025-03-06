@@ -59,10 +59,10 @@ Using the library "digest" in order to anonymize the subjects' ids, and to make 
 
 **Linear regression** - building 4 models in order to look at the connection between practice and AoO.
 model1 - outcome: "AoO", predictors: "practice". To answer the "Main Question".
-model2/3 - outcome: "AoO", predictors: "practice", "is_wind"/"is_keyboard". To check whether adding the instrument group, can contribute to the model (""Further Questions").
-model4 - outcome: "AoO", predictors: "practice", "is_wind", "is_keyboard". combining all variables.
+model2/3 - outcome: "AoO", predictors: "practice", "is_wind"/"is_strings". To check whether adding the instrument group, can contribute to the model (""Further Questions").
+model4 - outcome: "AoO", predictors: "practice", "is_wind", "is_strings". combining all variables.
 
-**Logistic regression** - building 4 models for each outcome ("is_wind"/"is_keyboard")  in order to further understand the connection between an instrument, practice, and AoO.
+**Logistic regression** - building 4 models for each outcome ("is_wind"/"is_strings")  in order to further understand the connection between an instrument, practice, and AoO.
 model1 - without predictors. Null model, to define baseline.
 model2 - predictors: "practice". To check whether practice alone can predict the instrument group.
 model3 - predictors: "practice". smaller data sample to compare with model4.
@@ -76,10 +76,10 @@ Saved as an additional file - "Results - C2.md"
 **C.3:**
 
 created 2 graphs for Linear models (model1/model2, model1/model3), were saved to "Linear_Models_plotting.pdf"
-created 2 graphs for Logistic models (Wind - models1-4, Keyboard - models1-4), were saved to "Logistic_Models_plotting.pdf"
+created 2 graphs for Logistic models (Wind - models1-4, Strings - models1-4), were saved to "Logistic_Models_plotting.pdf"
 
 
 **C.4:**
 
-created 2 graphs (Wind - models1-4, Keyboard - models1-4), were saved to "ROC_plotting.pdf"
+created 2 graphs (Wind - models1-4, Strings - models1-4), were saved to "ROC_plotting.pdf"
 
